@@ -1,11 +1,24 @@
+import os
 import pandas as pd
 import joblib
 
+# Project root directory
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# Model paths
+MODEL_PATH = os.path.join(
+    BASE_DIR,
+    "models",
+    "final_laptop_price_model.pkl"
+)
+
+PREPROCESSOR_PATH = os.path.join(
+    BASE_DIR,
+    "models",
+    "preprocessor.pkl"
+)
 
 # Load trained model and preprocessor
-MODEL_PATH = r"D:\Smart-Laptop-Price-Predictor\models\laptop_price_model.pkl"
-PREPROCESSOR_PATH = r"D:\Smart-Laptop-Price-Predictor\models\preprocessor.pkl"
-
 model = joblib.load(MODEL_PATH)
 preprocessor = joblib.load(PREPROCESSOR_PATH)
 
@@ -22,6 +35,8 @@ def predict_laptop_price(laptop_data):
     prediction = model.predict(processed_data)
 
     return prediction[0]
+
+
 if __name__ == "__main__":
 
     laptop = {
