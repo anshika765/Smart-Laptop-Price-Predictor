@@ -259,3 +259,8 @@ Smart-Laptop-Price-Predictor/
 ├── requirements.txt
 ├── README.md
 └── .gitignore
+## 🌐 Live Application
+
+The machine learning model is deployed using Streamlit.
+
+👉 **[Launch Smart Laptop Price Predictor](https://smart-laptop-price-predictor01.streamlit.app/)**
